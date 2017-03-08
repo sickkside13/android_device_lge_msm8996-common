@@ -137,6 +137,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     liboverlay
 
+# DU Updater
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.du.updater=oneplus3
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
