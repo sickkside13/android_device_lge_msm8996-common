@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     liboverlay
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusDoze
+
 # DU Updater
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.du.updater=oneplus3
