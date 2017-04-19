@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 
 # Doze mode
 PRODUCT_PACKAGES += \
-    OneplusDoze
+    LGDoze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
