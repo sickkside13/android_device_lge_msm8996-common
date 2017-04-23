@@ -95,6 +95,7 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 # Camera
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 
 # D2TW
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
