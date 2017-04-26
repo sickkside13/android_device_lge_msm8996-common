@@ -44,7 +44,11 @@ vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
 media.camera.ts.monotonic=0
+<<<<<<< HEAD
 persist.camera.HAL3.enabled=1
+=======
+persist.audio.camcorder.stereo=true
+>>>>>>> 6fd1352... msm8996: Enable stereo camcorder mics and set proper ACDB IDs
 
 # CNE and DPM
 persist.cne.feature=1
