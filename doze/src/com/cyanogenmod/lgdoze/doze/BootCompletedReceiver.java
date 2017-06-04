@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package com.cyanogenmod.lgdoze.doze;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -24,7 +24,7 @@ import android.util.Log;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "LGDoze";
+    private static final String TAG = "OneplusDoze";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -33,5 +33,4 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             Utils.startService(context);
         }
     }
-
 }
