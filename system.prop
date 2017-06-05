@@ -6,7 +6,6 @@
 ro.qc.sdk.audio.fluencetype=fluence
 audio.offload.min.duration.secs=30
 
-
 # Bluetooth
 persist.bt.enableAptXHD=true
 ro.bt.bdaddr_path="/data/misc/bdaddr"
