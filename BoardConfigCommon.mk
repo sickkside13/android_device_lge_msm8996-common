@@ -75,7 +75,7 @@ TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 # DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
+TARGET_GESTURES_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
 
 # CNE and DPM
 BOARD_USES_QCNE := true
@@ -119,6 +119,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
+
+# Use legacy HSR calculation
+TARGET_HAS_LEGACY_HSR := true
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
