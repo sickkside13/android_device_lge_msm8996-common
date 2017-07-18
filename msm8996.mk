@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SnapdragonCamera
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
