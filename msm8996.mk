@@ -74,7 +74,7 @@ PRODUCT_COPY_FILES += \
 
 # Hotword Enrollment
 PRODUCT_COPY_FILES += \
-    vendor/lge/msm8996-common/proprietary/priv-app/HotwordEnrollment/HotwordEnrollment.apk:system/priv-app/HotwordEnrollment/HotwordEnrollment.apk
+    vendor/lge/msm8996-common/proprietary/priv-app/HotwordEnrollment/HotwordEnrollment.apk:system/priv-app/HotwordEnrollment/HotwordEnrollment.apk:PRESIGNED
 
 # Audio
 PRODUCT_PACKAGES += \
