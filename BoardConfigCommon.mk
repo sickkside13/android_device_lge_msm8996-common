@@ -82,6 +82,8 @@ BOARD_USES_QCNE := true
 
 # CPU
 ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+TARGET_USES_INTERACTION_BOOST := true
 
 # Pre-optimization
 ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
@@ -120,9 +122,6 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
-# Use legacy HSR calculation
-TARGET_HAS_LEGACY_HSR := true
-
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
@@ -147,11 +146,13 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NEEDS_PDFIUM_BIGINT := true
 
 # Power
-TARGET_PROVIDES_POWERHAL := true
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+
+# Qualcomm
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
