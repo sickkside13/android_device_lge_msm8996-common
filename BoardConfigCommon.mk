@@ -75,8 +75,6 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 # Camera
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
-BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 # DT2W
 TARGET_GESTURES_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
@@ -88,17 +86,6 @@ BOARD_USES_QCNE := true
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 TARGET_USES_INTERACTION_BOOST := true
-
-# Pre-optimization
-ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
-  # Enable dex-preoptimization.
-  WITH_DEXPREOPT := true
-  # Disable "--compile-pic" flag.
-  WITH_DEXPREOPT_PIC := false
-else
-  # Disable dex-preoptimization.
-  WITH_DEXPREOPT := false
-endif
 
 # Display
 BOARD_USES_ADRENO := true
