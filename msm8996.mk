@@ -98,6 +98,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Gello
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    hwaddrs
+
 # Camera
 PRODUCT_PACKAGES += \
     SnapdragonCamera
