@@ -76,6 +76,7 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 # Camera
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # DT2W
 TARGET_GESTURES_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
@@ -182,3 +183,4 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcmdhd.bin"
 
 # inherit from the proprietary version
 -include vendor/lge/msm8996-common/BoardConfigVendor.mk
+-include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
