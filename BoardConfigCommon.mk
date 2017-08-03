@@ -89,16 +89,8 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 TARGET_USES_INTERACTION_BOOST := true
 
-# Pre-optimization
-ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
-  # Enable dex-preoptimization.
-  WITH_DEXPREOPT := true
-  # Disable "--compile-pic" flag.
-  WITH_DEXPREOPT_PIC := false
-else
-  # Disable dex-preoptimization.
-  WITH_DEXPREOPT := false
-endif
+# Wrapper
+BOARD_USES_LIBC_WRAPPER := true
 
 # Display
 BOARD_USES_ADRENO := true
