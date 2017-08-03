@@ -56,6 +56,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Audio
 -include hardware/qcom/audio/configs/msm8996/msm8996.mk
+AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
