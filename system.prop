@@ -5,6 +5,8 @@
 # Audio
 ro.qc.sdk.audio.fluencetype=fluence
 audio.offload.min.duration.secs=30
+persist.speaker.prot.enable=true
+persist.spkr.cal.duration=5
 
 # Bluetooth
 persist.bt.enableAptXHD=true
