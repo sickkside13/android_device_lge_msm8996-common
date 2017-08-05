@@ -86,8 +86,6 @@ BOARD_USES_QCNE := true
 
 # CPU
 ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-TARGET_USES_INTERACTION_BOOST := true
 
 # Pre-optimization
 ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
