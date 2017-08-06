@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Gesture handler
+PRODUCT_PACKAGES += \
+    GestureHandler
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8996 \

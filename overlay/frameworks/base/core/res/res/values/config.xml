@@ -394,4 +394,7 @@
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
 
+	<!-- DoubleTap2Wake Enabler for AOSPA -->
+	<add-resource type="bool" name="config_isDoubleTapEnabled">1</add-resource>
+
 </resources>
