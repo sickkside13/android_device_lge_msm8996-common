@@ -101,6 +101,9 @@ endif
 # Wrapper
 BOARD_USES_LIBC_WRAPPER := true
 
+# THP
+TARGET_SUPPORTS_THP := true
+
 # Display
 BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
