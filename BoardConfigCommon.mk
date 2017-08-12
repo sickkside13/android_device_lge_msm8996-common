@@ -110,23 +110,6 @@ BOARD_USES_QCNE := true
 # CPU
 ENABLE_CPUSETS := true
 
-# Pre-optimization
-ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
-  # Enable dex-preoptimization.
-  WITH_DEXPREOPT := true
-  # Disable "--compile-pic" flag.
-  WITH_DEXPREOPT_PIC := false
-else
-  # Disable dex-preoptimization.
-  WITH_DEXPREOPT := false
-endif
-
-# Wrapper
-BOARD_USES_LIBC_WRAPPER := true
-
-# THP
-TARGET_SUPPORTS_THP := true
-
 # Display
 BOARD_USES_ADRENO := true
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
