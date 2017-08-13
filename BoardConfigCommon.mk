@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := lge
-
 COMMON_PATH := device/lge/msm8996-common
+
+# inherit from common lge
+-include device/lge/common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
@@ -76,6 +77,7 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 # Camera
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 
 # DT2W
 TARGET_GESTURES_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
