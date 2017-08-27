@@ -45,7 +45,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x02000000
@@ -78,7 +78,7 @@ AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 #AUDIO_FEATURE_ENABLED_VORBIS_OFFLOAD := true
 #AUDIO_FEATURE_ENABLED_WMA_OFFLOAD := true
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_SUPPORTS_SOUND_TRIGGER := false
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -101,6 +101,8 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 # Camera
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+BOARD_USES_SNAPDRAGONCAMERA_VERSION := 2
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # CMHW
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
@@ -112,12 +114,21 @@ BOARD_USES_QCNE := true
 
 # CPU
 ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-TARGET_USES_INTERACTION_BOOST := true
+
+# Pre-optimization
+ifneq ($(filter-out false,$(USE_DEXPREOPT)),)
+  # Enable dex-preoptimization.
+  WITH_DEXPREOPT := true
+  # Disable "--compile-pic" flag.
+  WITH_DEXPREOPT_PIC := false
+else
+  # Disable dex-preoptimization.
+  WITH_DEXPREOPT := false
+endif
 
 # Display
 USE_DEVICE_SPECIFIC_DISPLAY := true
-DEVICE_SPECIFIC_DISPLAY_PATH := hardware/qcom/display-caf/msm8998
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8998
 BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -134,8 +145,13 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_USES_HWC2 := true
 
+# Audio/media
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8996
+
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/lge/msm8996-common/cryptfs_hw
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8996
@@ -148,10 +164,6 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# NFC
-BOARD_NFC_CHIPSET := pn548
-TARGET_USES_NQ_NFC := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -182,7 +194,7 @@ PRODUCT_BOOT_JARS += tcmiface tcmclient com.qti.dpmframework dpmapi com.qti.loca
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk

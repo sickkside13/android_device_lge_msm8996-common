@@ -47,8 +47,12 @@ ro.bt.bdaddr_path="/data/misc/bluetooth/bdaddr"
 ro.camera.notify_nfc=1
 vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
-media.camera.ts.monotonic=0
+media.camera.ts.monotonic=1
+persist.camera.HAL3.enabled=0
+persist.ts.rtmakeup=true
 persist.audio.camcorder.stereo=true
+media.stagefright.less-secure=true
+media.stagefright.legacyencoder=true
 
 # CNE and DPM
 persist.cne.feature=1
@@ -173,3 +177,8 @@ persist.timed.enable=true
 
 # WiFi
 wifi.interface=wlan0
+
+# Google Assistant
+ro.opa.eligible_device=true
+
+dalvik.vm.dex2oat-swap=false
