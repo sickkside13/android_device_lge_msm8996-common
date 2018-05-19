@@ -52,5 +52,9 @@
     <!-- This value may be tweaked to save memory on low RAM devices. The value
          is the percentage of camera preview height/width to scale to. -->
     <integer name="panorama_frame_size_reduction">100</integer>
+    <!-- Number of supported cameras.
+         Helpful when a HAL reports more devices than it should.
+         A value of -1 enables support for all available cameras reported by HAL -->
+    <integer name="num_of_supported_cameras">-1</integer>
 
 </resources>
